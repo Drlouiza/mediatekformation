@@ -1,0 +1,38 @@
+{{ form_start(formformation, {'attr': {'class': 'form'}}) }}
+<div class="row">
+    <div class="col">             
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    {{ form_row(formformation.title, {'attr': {'class': 'form-control', 'placeholder': 'Titre'}}) }}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    {{ form_row(formformation.description, {'attr': {'class': 'form-control', 'placeholder': 'Description'}}) }}
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    {{ form_row(formformation.publishedAt, {'attr': {'class': 'form-control', 'placeholder': 'Date de publication'}}) }}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    {{ form_row(formformation.playlist, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    {{ form_row(formformation.categories, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>  
+            <div class="col-md-2">
+                <div class="form-group">
+                    {{ form_row(formformation.submit, {'attr': {'class': 'btn btn-success'}}) }}
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>
+{{ form_end(formformation) }}

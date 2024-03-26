@@ -1,0 +1,76 @@
+{% extends "baseadmin.html.twig" %}
+
+{% block body %}
+    <h5>Gestion des catégories</h5>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        <form class="form-inline mt-1" method="GET" action="{{ path('admin.categories') }}">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="search" placeholder="Rechercher par nom de catégorie">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-info">Rechercher</button>
+                                </div>
+                            </div>
+                        </form>
+                    </th>
+                    <th class="text-end align-middle" scope="col">
+                        <form class="form-inline mt-1" method="POST" action="{{ path('admin.ajout.categorie') }}">
+                            <div class="text-end input-group  ">
+                                <input type="text" class="form-control" name="name">
+                                <input type="hidden" name="_token" value="{{ csrf_token('filtre_name') }}">
+                                    <button type ="submit" class="btn btn-success">Ajouter une catégorie</button>
+                            </div>
+                        </form>
+                    </th>
+                </tr>
+            </table>
+
+    <table class="table table-striped">
+        <caption></caption>
+        <thead>  
+            <tr>
+                <th class="text-left align-top" scope="col">
+                    Catégories<br>
+                    <a href="{{ path('admin.categories.sort', {champ:'name', ordre:'ASC'}) }}" class="btn btn-info btn-sm active" role="button" aria-pressed="true">Croissant</a>
+                    <a href="{{ path('admin.categories.sort', {champ:'name', ordre:'DESC'})}}" class="btn btn-info btn-sm active" role="button" aria-pressed="true">Décroissant</a>
+                </th>
+                <th class="text-left align-top" scope="col">
+                    Formations <br>
+                </th>
+                <th class="text-left align-top" scope="col">
+                    Suppression <br>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>  
+        {% for categorie in categories %}
+            <tr class="align-middle">
+                <td>
+                    <h5 class="text-info">
+                        {{ categorie.name }}
+                    </h5>
+                </td>
+                <td class="text-left">
+                    {% for formation in categorie.formations %}
+                        {{ formation.title }}<br />
+                    {% else %}
+                        Aucune formation associée
+                    {% endfor %}
+                </td>
+                <td>
+                    {% if categorie.formations|length == 0 %}
+                        <a href="{{ path('admin.categories.suppr', {id:categorie.id}) }}" class="btn btn-danger" onclick="return confirm('Etes-vous sûr de vouloir supprimer {{ categorie.name }} ?')">Supprimer</a>
+                    {% else %}
+                        <button type="button" class="btn btn-danger disabled">Supprimer</button>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+
+
+    </table>
+{% endblock %}
