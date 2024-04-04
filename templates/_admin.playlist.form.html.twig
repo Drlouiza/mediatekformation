@@ -1,0 +1,24 @@
+{{ form_start(formPlaylist, {'attr': {'class': 'form'}}) }}
+<div class="row">
+    <div class="col">             
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    {{ form_row(formPlaylist.name, {'attr': {'class': 'form-control', 'placeholder': 'Playlist'}}) }}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    {{ form_row(formPlaylist.description, {'attr': {'class': 'form-control', 'placeholder': 'Description'}}) }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_row(formPlaylist.formations, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group mt-3">
+            {{ form_row(formPlaylist.submit, {'attr': {'class': 'btn btn-success btn-block'}}) }}
+        </div>  
+    </div>
+</div>
+{{ form_end(formPlaylist) }}

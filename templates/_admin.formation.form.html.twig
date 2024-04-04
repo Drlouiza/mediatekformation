@@ -1,0 +1,40 @@
+{{ form_start(formFormation, {'attr': {'class': 'form'}}) }}
+<div class="row">
+    <div class="col">             
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    {{ form_row(formFormation.publishedAt, {'attr': {'class': 'form-control', 'placeholder': 'Date de publication'}}) }}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    {{ form_row(formFormation.title, {'attr': {'class': 'form-control', 'placeholder': 'Titre'}}) }}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    {{ form_row(formFormation.videoId, {'attr': {'class': 'form-control', 'placeholder': 'ID de la vidéo'}}) }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_row(formFormation.description, {'attr': {'class': 'form-control', 'placeholder': 'Description'}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(formFormation.playlist, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(formFormation.categories, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(formFormation.submit, {'attr': {'class': 'btn btn-success btn-block'}}) }}
+        </div>
+    </div>
+</div>
+{{ form_end(formFormation) }}
+
+
+
+
+
