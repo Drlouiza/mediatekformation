@@ -31,7 +31,7 @@ class PlaylistRepository extends ServiceEntityRepository
     /**
      * Retourne toutes les playlists triées sur le nom de la playlist
      * @param type $champ
-     * @param type $ordre
+     * @param type string $ordre
      * @return Playlist[]
      */
     public function findAllOrderByName($ordre): array{
@@ -40,8 +40,8 @@ class PlaylistRepository extends ServiceEntityRepository
                 ->groupBy('p.id')
                 ->orderBy('p.name', $ordre)
                 ->getQuery()
-                ->getResult();       
-    } 
+                ->getResult();
+    }
 	
     /**
      * Enregistrements dont un champ contient une valeur
@@ -54,8 +54,8 @@ class PlaylistRepository extends ServiceEntityRepository
     public function findByContainValue($champ, $valeur, $table=""): array{
         if($valeur==""){
             return $this->findAllOrderByName('ASC');
-        }    
-        if($table==""){      
+        }
+        if($table==""){
             return $this->createQueryBuilder('p')
                     ->leftjoin('p.formations', 'f')
                     ->where('p.'.$champ.' LIKE :valeur')
@@ -63,8 +63,8 @@ class PlaylistRepository extends ServiceEntityRepository
                     ->groupBy('p.id')
                     ->orderBy('p.name', 'ASC')
                     ->getQuery()
-                    ->getResult();              
-        }else{   
+                    ->getResult();
+        }else{
             return $this->createQueryBuilder('p')
                     ->leftjoin('p.formations', 'f')
                     ->leftjoin('f.categories', 'c')
@@ -73,8 +73,8 @@ class PlaylistRepository extends ServiceEntityRepository
                     ->groupBy('p.id')
                     ->orderBy('p.name', 'ASC')
                     ->getQuery()
-                    ->getResult();              
-        }           
-    }    
+                    ->getResult();
+        }
+    }
     
 }
