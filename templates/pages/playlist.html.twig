@@ -10,8 +10,10 @@
                     {{ playlist.name }}&nbsp;
                 {% endfor %}
             <br /><br />
+            <strong> {{playlist.formations|length}} {{ (playlist.formations|length) > 1 ? 'formations' : 'formation' }} </strong>
+            <br /><br />
             <strong>description :</strong><br />
-                {{ playlist.description|nl2br }}
+                {{ playlist.description|nl2br }} 
         </div>
         <div class="col">
             <!-- boucle sur l'affichage des formations -->
