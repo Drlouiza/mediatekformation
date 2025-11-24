@@ -95,7 +95,7 @@ class AdminFormationController extends AbstractController {
             $this->addFlash('warning', 'La formation demandée n’existe pas.');
             return $this->redirectToRoute('admin.formations');
         }
-        $this->formationRepository->remove($formation);
+        $this->formationRepository->remove($formation, true);
         $this->addFlash('danger', 'La suppression de la formation "' . $formation->getTitle() . '" a été effectuée avec succès.');
 
         return $this->redirectToRoute('admin.formations');
@@ -135,7 +135,7 @@ class AdminFormationController extends AbstractController {
                 $this->formationRepository->add($formation , true );
                 $this->addFlash(
                         'success',
-                        'Ajout de la formation ' . $formation->getTitle() . ' prise en compte');
+                        'Modification de la formation ' . $formation->getTitle() . ' prise en compte');
                 return $this->redirectToRoute('admin.formations');
             }
             return $this->render(self::PAGE_FORMATION, [
