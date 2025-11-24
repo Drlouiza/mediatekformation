@@ -1,0 +1,15 @@
+{{ form_start(formCategorie) }}
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    {{ form_row(formCategorie.name) }}
+                </div>
+            <br>
+            <br>
+            {{ form_row(formCategorie.formations) }}
+            <br>
+            {{ form_row(formCategorie.submit) }}
+        </div>
+    </div>
+{{ form_end(formCategorie) }}

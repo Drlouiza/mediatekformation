@@ -123,7 +123,7 @@ class AdminPlaylistController extends AbstractController {
         $this->playlistRepository->remove($playlist, true);
         $this->addFlash('danger', 'La suppression de la formation "' . $playlist->getName() . '" a été effectuée avec succès.');
 
-        return $this->redirectToRoute('admin.formations');
+        return $this->redirectToRoute('admin.playlists');
     }
     
     /**
@@ -131,7 +131,7 @@ class AdminPlaylistController extends AbstractController {
      * @param Request $request
      * @return Response
      */
-    #[Route('admin/playlist/edit{id}' , name: 'admin.playlists.edit')]
+    #[Route('admin/playlists/edit{id}' , name: 'admin.playlists.edit')]
         public function editplaylist (Playlist $playlist, request $request): Response {
             $formPlaylist  = $this->createForm(PlaylistType::class, $playlist);
             $formPlaylist ->handleRequest($request);
