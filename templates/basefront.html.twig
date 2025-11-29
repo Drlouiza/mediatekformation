@@ -4,6 +4,8 @@
 {% block stylesheets %}{% endblock %}
 {% block top %}
     <div class="container">
+        
+
         <!-- titre -->
         <div class="text-left">
             <img  src="{{ app.request.getBasePath()~'/banniere.jpg' }}" alt=" img de banniere">
@@ -22,6 +24,11 @@
                         <a class="nav-link" href="{{ path('playlists') }}">Playlists</a>
                     </li>                    
                 </ul>
+                <div class="d-flex ms-auto">
+                    <a href="{{ path('admin.formations') }}" class="btn btn-outline-success">
+                        Espace administrateur
+                    </a>
+                </div>
             </div>
         </nav>        
     </div>
