@@ -21,6 +21,8 @@ class AdminFormationController extends AbstractController {
     
     const PAGE_FORMATION = "pages/admin/formation.html.twig";
 
+    const VUE_FORMATION = "pages/admin/vue.formation.html.twig";
+
 
 
     /**
@@ -76,7 +78,7 @@ class AdminFormationController extends AbstractController {
     #[Route('/admin/formations/formation/{id}', name: 'admin.formations.showone')]
     public function showOne($id): Response{
         $formation = $this->formationRepository->find($id);
-        return $this->render(self::PAGE_FORMATION, [
+        return $this->render(self::VUE_FORMATION, [
             'formation' => $formation
         ]);
     }
