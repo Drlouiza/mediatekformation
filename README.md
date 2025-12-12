@@ -5,7 +5,7 @@
 ## Les pages du back-office 
 
 ### Page 1 : les formations
-![formationsAdmin](https://github.com/Drlouiza/mediatekformation/raw/master/images/formationsAdmin.png)
+![formationsAdmin](https://github.com/Drlouiza/mediatekformation/blob/master/images/formationsAdmin.png?raw=true)
 Page d'accueil du back-office, avec la possibilité de filtrer comme dans la partie front. Trois boutons ont été ajoutés. Les boutons "Modifier" et "Ajouter" permettent d'accéder au formulaire.
 ### Page 2 : le formulaire des formations
 ![formationAdmin](https://github.com/Drlouiza/mediatekformation/blob/master/images/formationAdmin.png?raw=true)
