@@ -1,86 +1,108 @@
-# Mediatekformation
-## Présentation
-Ce site, développé avec Symfony 6.4, permet d'accéder aux vidéos d'auto-formation proposées par une chaîne de médiathèques et qui sont aussi accessibles sur YouTube.<br> 
-Actuellement, seule la partie front office a été développée. Elle contient les fonctionnalités globales suivantes :<br>
-![img1](https://github.com/user-attachments/assets/9c5c503b-738d-40cf-ba53-36ba4c0209e8)
-## Les différentes pages
-Voici les 5 pages correspondant aux différents cas d’utilisation.
-### Page 1 : l'accueil
-Cette page présente le fonctionnement du site et les 2 dernières vidéos mises en ligne.<br>
-La partie du haut contient une bannière (logo, nom et phrase présentant le but du site) et le menu permettant d'accéder aux 3 pages principales (Accueil, Formations, Playlists).<br>
-Le centre contient un texte de présentation avec, entre autres, les liens pour accéder aux 2 autres pages principales.<br>
-La partie basse contient les 2 dernières formations mises en ligne. Cliquer sur une image permet d'accéder à la page 3 de présentation de la formation.<br>
-Le bas de page contient un lien pour accéder à la page des CGU : ce lien est présent en bas de chaque page excepté la page des CGU.<br>
-![img2](https://github.com/user-attachments/assets/523b4233-3505-4b8c-9db0-5e7b72965bc6)
-### Page 2 : les formations
-Cette page présente les formations proposées en ligne (accessibles sur YouTube).<br>
-La partie haute est identique à la page d'accueil (bannière et menu).<br>
-La partie centrale contient un tableau composé de 5 colonnes :<br>
-•	La 1ère colonne ("formation") contient le titre de chaque formation.<br>
-•	La 2ème colonne ("playlist") contient le nom de la playlist dans laquelle chaque formation se trouve.<br>
-•	La 3ème colonne ("catégories") contient la ou les catégories concernées par chaque formation (langage…).<br>
-•	La 4ème colonne ("date") contient la date de parution de chaque formation.<br>
-•	LA 5ème contient la capture visible sur YouTube, pour chaque formation.<br>
-Au niveau des colonnes "formation", "playlist" et "date", 2 boutons permettent de trier les lignes en ordre croissant ("<") ou décroissant (">").<br>
-Au niveau des colonnes "formation" et "playlist", il est possible de filtrer les lignes en tapant un texte : seuls les lignes qui contiennent ce texte sont affichées. Si la zone est vide, le fait de cliquer sur "filtrer" permet de retrouver la liste complète.<br> 
-Au niveau de la catégorie, la sélection d'une catégorie dans le combo permet d'afficher uniquement les formations qui ont cette catégorie. Le fait de sélectionner la ligne vide du combo permet d'afficher à nouveau toutes les formations.<br>
-Par défaut la liste est triée sur la date par ordre décroissant (la formation la plus récente en premier).<br>
-Le fait de cliquer sur une miniature permet d'accéder à la troisième page contenant le détail de la formation.<br>
-![img3](https://github.com/user-attachments/assets/bc033cf9-41a5-4cad-a268-8abb400965c5)
-### Page 3 : détail d'une formation
-Cette page n'est pas accessible par le menu mais uniquement en cliquant sur une miniature dans la page "Formations" ou une image dans la page "Accueil".<br>
-La partie haute est identique à la page d'accueil (bannière et menu).<br>
-La partie centrale est séparée en 2 parties :<br>
-•	La partie gauche contient la vidéo qui peut être directement visible dans le site ou sur YouTube.<br>
-•	La partie droite contient la date de parution, le titre de la formation, le nom de la playlist, la liste des catégories et sa description détaillée.<br>
-![img4](https://github.com/user-attachments/assets/f41d05d8-5980-4dc4-9eb7-58d1c31b8a25)
-### Page 4 : les playlists
-Cette page présente les playlists.<br>
-La partie haute est identique à la page d'accueil (bannière et menu).<br>
-La partie centrale contient un tableau composé de 3 colonnes :<br>
-•	La 1ère colonne ("playlist") contient le nom de chaque playlist.<br>
-•	La 2ème colonne ("catégories") contient la ou les catégories concernées par chaque playlist (langage…).<br>
-•	La 3ème contient un bouton pour accéder à la page de présentation de la playlist.<br>
-Au niveau de la colonne "playlist", 2 boutons permettent de trier les lignes en ordre croissant ("<") ou décroissant (">"). Il est aussi possible de filtrer les lignes en tapant un texte : seuls les lignes qui contiennent ce texte sont affichées. Si la zone est vide, le fait de cliquer sur "filtrer" permet de retrouver la liste complète.<br> 
-Au niveau de la catégorie, la sélection d'une catégorie dans le combo permet d'afficher uniquement les playlists qui ont cette catégorie. Le fait de sélectionner la ligne vide du combo permet d'afficher à nouveau toutes les playlists.<br>
-Par défaut la liste est triée sur le nom de la playlist.<br>
-Cliquer sur le bouton "voir détail" d'une playlist permet d'accéder à la page 5 qui présente le détail de la playlist concernée.<br>
-![img5](https://github.com/user-attachments/assets/bbe8934f-8d4b-4da2-8216-60b96b726d8a)
-### Page 5 : détail d'une playlist
-Cette page n'est pas accessible par le menu mais uniquement en cliquant sur un bouton "voir détail" dans la page "Playlists".<br>
-La partie haute est identique à la page d'accueil (bannière et menu).<br>
-La partie centrale est séparée en 2 parties :<br>
-•	La partie gauche contient les informations de la playlist (titre, liste des catégories, description).<br>
-•	La partie droite contient la liste des formations contenues dans la playlist (miniature et titre) avec possibilité de cliquer sur une formation pour aller dans la page de la formation.<br>
-![img6](https://github.com/user-attachments/assets/f216a9e7-084a-4683-9b4e-cada5574a0e2)
-## La base de données
-La base de données exploitée par le site est au format MySQL.
-### Schéma conceptuel de données
-Voici le schéma correspondant à la BDD.<br>
-![img7](https://github.com/user-attachments/assets/f3eca694-bf96-4f6f-811e-9d11a7925e9e)
-<br>video_id contient le code YouTube de la vidéo, qui permet ensuite de lancer la vidéo à l'adresse suivante :<br>
-https://www.youtube.com/embed/<<<video_id>>>
-### Relations issues du schéma
-<code><strong>formation (id, published_at, title, video_id, description, playlist_id)</strong>
-id : clé primaire
-playlist_id : clé étrangère en ref. à id de playlist
-<strong>playlist (id, name, description)</strong>
-id : clé primaire
-<strong>categorie (id, name)</strong>
-id : clé primaire
-<strong>formation_categorie (id_formation, id_categorie)</strong>
-id_formation, id_categorie : clé primaire
-id_formation : clé étrangère en ref. à id de formation
-id_categorie : clé étrangère en ref. à id de categorie</code>
+### [Le site](https://www.mediaformation.site/) 
+### [Présentation du projet](https://louizadro-portfolio.fr/mediatek-formation/) 
+### [Le projet de départ](https://github.com/CNED-SLAM/mediatekformation) 
+  
+## Les pages du back-office 
 
-Remarques : 
-Les clés primaires des entités sont en auto-incrémentation.<br>
-Le chemin des images (des 2 tailles) n'est pas mémorisé dans la BDD car il peut être fabriqué de la façon suivante :<br>
-"https://i.ytimg.com/vi/" suivi de, soit "/default.jpg" (pour la miniature), soit "/hqdefault.jpg" (pour l'image plus grande de la page d'accueil).
-## Test de l'application en local
-- Vérifier que Composer, Git et Wamserver (ou équivalent) sont installés sur l'ordinateur.
-- Télécharger le code et le dézipper dans www de Wampserver (ou dossier équivalent) puis renommer le dossier en "mediatekformation".<br>
-- Ouvrir une fenêtre de commandes en mode admin, se positionner dans le dossier du projet et taper "composer install" pour reconstituer le dossier vendor.<br>
-- Dans phpMyAdmin, se connecter à MySQL en root sans mot de passe et créer la BDD 'mediatekformation'.<br>
-- Récupérer le fichier mediatekformation.sql en racine du projet et l'utiliser pour remplir la BDD (si vous voulez mettre un login/pwd d'accès, il faut créer un utilisateur, lui donner les droits sur la BDD et il faut le préciser dans le fichier ".env" en racine du projet).<br>
-- De préférence, ouvrir l'application dans un IDE professionnel. L'adresse pour la lancer est : http://localhost/mediatekformation/public/index.php<br>
+### Page 1 : les formations
+![img1](https://github.com/Drlouiza/mediatekformation/blob/master/images/formationsAdmin.png?raw=true)
+Page d'accueil du back-office, avec la possibilité de filtrer comme dans la partie front. Trois boutons ont été ajoutés. Les boutons "Modifier" et "Ajouter" permettent d'accéder au formulaire.
+### Page 2 : le formulaire des formations
+![img2](https://github.com/Drlouiza/mediatekformation/blob/master/images/formationAdmin.png?raw=true)
+Dans ce formulaire, seul le titre est obligatoire. Une formation peut être rattachée à plusieurs catégories, à une seule playlist.
+### Page 3 : les playlists
+![img3](https://github.com/Drlouiza/mediatekformation/blob/master/images/playlists.png?raw=true)  
+Page des playlists du back-office, avec la possibilité de filtrer comme dans la partie front. Trois boutons ont été ajoutés. Les boutons "Modifier" et "Ajouter" permettent d'accéder au formulaire.
+### Page 4 : le formulaire des playlists
+![img4](https://github.com/Drlouiza/mediatekformation/blob/master/images/playlist.png?raw=true)
+Dans ce formulaire, seul le nom est obligatoire. Si "Playlist : .. " est rattaché au nom d'une formation, cela signifie que la formation est déjà associée à une playlist. Une formation ne peut être associée qu'à une seule playlist. 
+### Page 5 : les catégories
+![img5](https://github.com/r4ndomfriday/PortFolio/blob/87964cffd8baa685c5d3902bd5b8143a0dcbcaff/ressources/readme/categories.png?raw=true)
+Liste des catégories avec possibilité de trier et de filtrer. Vous pouvez ajouter, modifier ou supprimer une catégorie.
+### Page 6 : le formulaire des catégories
+![img6](https://github.com/r4ndomfriday/PortFolio/blob/87964cffd8baa685c5d3902bd5b8143a0dcbcaff/ressources/readme/categorie.png?raw=true)
+Dans ce formulaire, seul le nom est obligatoire. Une Catégorie peu être rattaché a plusieurs formations et inversement.
+## Installation en local :
+
+installer  [Symfony CLI](https://symfony.com/download).  
+@@ -69,7 +91,7 @@ Ne pas enregistrer les cookies
+Pour que la demande de déconnexion se fasse correctement, mettre les cookies à “Disabled” (Authentication > Flows > Browser > Cookie)
+
+### Installer OpenJDK :  
+   [https://openjdk.java.net/ ](https://openjdk.java.net/ )  
+Dans la nouvelle page, paragraphe “Download”, cliquer sur le lien “jdk.java.nt/18”.
+Une fois le fichier téléchargé, aller dans Donwloads, clic droit sur le fichier, “Extract all” et choisir comme emplacement “C:\” puis “Extract”.
+En racine de C, le dossier “jdk-18.×.x” a été créé.
+Dans les variables d’environnement système :
+- Dans la variable path, ajouter le chemin vers le dossier bin du jdk (du genre “C:\jdk-18.×.x\bin”).
+- Créer la variable “JAVA_HOME” et mettre le chemin vers le dossier du jdk (le dossier racine, donc du genre “C:\jdk-18.×.x”).  
+Enregistrer.
+
+### Installer Keycloak:  
+Telecharger  [keycloak-19.0.1](https://repo1.maven.org/maven2/org/keycloak/keycloak-quarkus-dist/19.0.1/)
+
+```bash
+bin/kc.bat start-dev
+```
+
+Configurer Keycloak en local (localhost:8080).  
+Créer un royaume "Myapplis"  
+Dans Clients, cliquer sur “Create client”.  
+Ajouter un client "mediatek86"  (Client ID) qui correspondra à l’application qui sollicite Keycloak  puis “Save”.  
+Vous pouvez saisir la même valeur pour le Name.  
+Lors des différentes étapes de création du client, contrôlez les paramètres suivants :
+- Client type : OpenID Connect
+- Always display in console : Off
+- Client authentication : On
+- Authorisation : Off
+- Standard flow : On
+- Implicit flow : On
+- Direct access grants : On
+- Service accounts roles : Off
+- OAuth 2.0 Device Authorization Grant : Off
+- OIDC CIBA Grant : Off
+Pensez à enregistrer (Save en bas). Une fois le client créé, vous êtes normalement dans l’onglet “Settings”. Faites les contrôles et modifications suivantes :
+- Enabled : On (en haut à droite)
+- Valid redirect URIs (dans Access settings) : *
+- Consent required (dans Login settings) : On
+- Display client on screen : On
+- Front channel logout (dans logout settings) : Off
+- Backchannel logout session required : On
+- Backchannel logout revoke offline sessions : Off
+Pensez à enregistrer (Save en bas)
+Toujours sur ce client, allez dans l’onglet “Credentials”.
+Puisque vous avez défini un accès “confidential”, vous avez un code secret (c’est le “client secret”).
+Copiez ce code secret et gardez-le : il va être inséré dans un fichier du projet.
+Créer un utilisateur
+
+Dans “Users”, cliquer sur “Create new user”.
+Donner le nom de l’utilisateur qui doit avoir les droits pour accéder à certaines parties de l’application (par exemple la partie “admin”).
+Donner un email (peu importe), Enabled (ON), Email Verified (OFF), puis “Create”.
+Aller dans “Credentials” pour définir un mot de passe (sécurisé), sans oublier de mettre
+“Tempory” à OFF.
+Ne pas enregistrer les cookies
+
+Pour que la demande de déconnexion se fasse correctement, mettre les cookies à “Disabled” (Authentication > Flows > Browser > Cookie)
+
+
+### Importer la base de donnees
+importer mediatekformation.sql qui ce trouve a la racine du projet dans un SGBD Mysql/Mariadb.  
+
+
+### Configuration de l'application
+Pour que l'authentification fonctionne vous devez rajouter au .env a la racine du projet  
+
+```python
+DATABASE_URL="mysql://utilisateur:motdepasse@127.0.0.1:3306/database"   # seul une DATABASE_URL doit être des-commenté
+KEYCLOAK_SECRET="client secret" # renseigné dans l'onglet “Credentials”
+KEYCLOAK_CLIENTID=mediatek86
+KEYCLOAK_APP_URL=http://localhost:8080
+```
+
+
+### Lancer l'application
+
+à la racine de l'application :  
+```bash
+symfony server:start
+```
