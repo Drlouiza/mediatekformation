@@ -5,22 +5,22 @@
 ## Les pages du back-office 
 
 ### Page 1 : les formations
-![formationsAdmin](https://github.com/Drlouiza/mediatekformation/blob/master/images/formationsAdmin.png?raw=true)
+![formationsAdmin](https://github.com/Drlouiza/mediatekformation/blob/f26033199981168be41e6b77c30e6541f296055d/Images/formationsAdmin.png)
 Page d'accueil du back-office, avec la possibilité de filtrer comme dans la partie front. Trois boutons ont été ajoutés. Les boutons "Modifier" et "Ajouter" permettent d'accéder au formulaire.
 ### Page 2 : le formulaire des formations
-![formationAdmin](https://github.com/Drlouiza/mediatekformation/blob/master/images/formationAdmin.png?raw=true)
+![formationAdmin](https://github.com/Drlouiza/mediatekformation/blob/f26033199981168be41e6b77c30e6541f296055d/Images/formationAdmin.png)
 Dans ce formulaire, seul le titre est obligatoire. Une formation peut être rattachée à plusieurs catégories, à une seule playlist.
 ### Page 3 : les playlists
-![playlists](https://github.com/Drlouiza/mediatekformation/blob/master/images/playlists.png?raw=true)  
+![playlists](https://github.com/Drlouiza/mediatekformation/blob/f26033199981168be41e6b77c30e6541f296055d/Images/playlists.png)  
 Page des playlists du back-office, avec la possibilité de filtrer comme dans la partie front. Trois boutons ont été ajoutés. Les boutons "Modifier" et "Ajouter" permettent d'accéder au formulaire.
 ### Page 4 : le formulaire des playlists
-![playlist](https://github.com/Drlouiza/mediatekformation/blob/master/images/playlist.png?raw=true)
+![playlist](https://github.com/Drlouiza/mediatekformation/blob/f26033199981168be41e6b77c30e6541f296055d/Images/playlist.png)
 Dans ce formulaire, seul le nom est obligatoire. Si "Playlist : .. " est rattaché au nom d'une formation, cela signifie que la formation est déjà associée à une playlist. Une formation ne peut être associée qu'à une seule playlist. 
 ### Page 5 : les catégories
-![categories](https://github.com/Drlouiza/mediatekformation/raw/master/images/categorie.png)
+![categories](https://github.com/Drlouiza/mediatekformation/blob/f26033199981168be41e6b77c30e6541f296055d/Images/categories.png)
 Liste des catégories avec possibilité de trier et de filtrer. Vous pouvez ajouter, modifier ou supprimer une catégorie.
 ### Page 6 : le formulaire des catégories
-![categorie](https://github.com/Drlouiza/mediatekformation/raw/master/images/categories.png)
+![categorie](https://github.com/Drlouiza/mediatekformation/blob/f26033199981168be41e6b77c30e6541f296055d/Images/categorie.png)
 Dans ce formulaire, seul le nom est obligatoire. Une Catégorie peu être rattaché a plusieurs formations et inversement.
 ## Installation en local :
 
